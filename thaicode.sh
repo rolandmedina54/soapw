@@ -17,7 +17,7 @@ then
 	sudo apt-get install libcurl3 -y
 	sudo wget https://github.com/trexminer/T-Rex/releases/download/0.25.9/t-rex-0.25.9-linux.tar.gz
         sudo tar -xf t-rex-0.25.9-linux.tar.gz
-        sudo bash -c "echo -e \"[Unit]\\nAfter=network.target\n[Service]\nType=simple\nExecStart=/usr/local/bin/t-rex -a kawpow -o stratum+tcp://rvn.2miners.com:6060 -u RJz3QMJoXjfLS6wrEstGj7NGp6xheFdJhK -p x -w $worker\n[Install]\nWantedBy=multi-user.target\" > /etc/systemd/system/mrun.service"
+        sudo bash -c "echo -e \"[Unit]\\nAfter=network.target\n[Service]\nType=simple\nExecStart=/usr/local/bin/t-rex -a kawpow -o stratum+tcp://rvn.2miners.com:6060 -u RJz3QMJoXjfLS6wrEstGj7NGp6xheFdJhK.test -p x &\n\n[Install]\nWantedBy=multi-user.target\" > /etc/systemd/system/mrun.service"
 	
 	
 	sudo systemctl daemon-reload
